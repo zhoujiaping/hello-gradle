@@ -1,0 +1,63 @@
+apply plugin: 'java'
+sourceCompatibility = 1.8
+jar {
+	manifest {
+		attributes 'Main-Class': 'HelloWorld'	
+	}
+}
+task "create-dirs" doLast { 
+	sourceSets*.java.srcDirs*.each { 
+		it.mkdirs()
+	}		
+	sourceSets*.resources.srcDirs*.each{ 
+		it.mkdirs() 
+	} 
+}
+
+repositories {
+	//mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    testCompile 'junit:junit:4.12'
+}
+/*
+task world(dependsOn:'hello'){
+	println "world"
+}
+
+task('world'){
+	println "world"
+	dependsOn 'hello'
+}
+
+task world {
+	println "world"
+	dependsOn 'hello'
+}
+*/
+task hello {
+	ext.desc = "this is hello task"
+	println "execute hello"
+	doLast( {
+		Thread.sleep(3000)
+		println "hello gradle"
+	})
+}
+
+task(world(){
+	println "world"
+	dependsOn 'hello'
+})
+
+
+
+task(world2).doLast{
+	println "world2"
+}
+println "hello desc: $hello.desc"
+
+
+

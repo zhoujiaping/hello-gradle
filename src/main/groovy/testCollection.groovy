@@ -22,4 +22,4 @@ list<<5
 println list
 
 def chars = ('A'..'Z')+('a'..'z')+('0'..'9')+['+','/']
-println chars
+println chars.join('')

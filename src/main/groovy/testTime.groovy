@@ -6,3 +6,4 @@ use(TimeCategory)  {
     def someDate = new Date()
     println someDate - 3.months
 }
+//DSL

@@ -65,6 +65,11 @@ dependencies {
 	compile 'mysql:mysql-connector-java:5.1.46'
 	compile('org.apache.httpcomponents:httpclient:4.2.2')
 	compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7')
+    compile 'com.craigburke.document:core:0.5.0'
+    compile 'com.craigburke.document:pdf:0.5.0'
+	compile 'com.craigburke.document:word:0.5.0'
+
+	//compile 'org.apache.commons:commons-compress:1.20'
 }
 /*
 命令行启动jetty: gradle appRun
